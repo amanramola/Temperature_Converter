@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter Celsius-Fahrenheit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bgcontainer">
+        <div class="convert">
+            <img src="image.png">
+            <div class="convertbox">
+                Fahrenheit :
+                <input type="number" placeholder="Enter Value" id="fahr">
+                <div>or</div>
+                <input type="number" placeholder="Enter Value" id="cel">
+                : Celsius
+            </div>
+        </div>
+    </div>
+    <script>
+        var celsius=document.getElementById('cel');
+        var fahrenheit=document.getElementById('fahr');
+        celsius.oninput=function(){
+            var f=(parseFloat(celsius.value)*9)/5+32;
+            fahrenheit.value=parseFloat(f.toFixed(1));
+        }
+        fahrenheit.oninput=function(){
+            var c=((parseFloat(fahrenheit.value)-32)*5)/9;
+            celsius.value=parseFloat(c.toFixed(1));
+        }
+    </script>
+</body>
+</html>
